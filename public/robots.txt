@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://docs-gitcoino.vercel.app
+Host: https://rapport.tec.br/allo-docs
 
 # Sitemaps
-Sitemap: https://docs-gitcoino.vercel.app/sitemap.xml
+Sitemap: https://rapport.tec.br/allo-docs/sitemap.xml

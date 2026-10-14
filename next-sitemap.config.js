@@ -1,5 +1,5 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || "https://docs-gitcoino.vercel.app",
+  siteUrl: process.env.SITE_URL || "https://rapport.tec.br/allo-docs",
   generateRobotsTxt: true,
 };
