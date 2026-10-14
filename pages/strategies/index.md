@@ -20,7 +20,7 @@ While [allocation mechanisms](https://allo.expert/mechanisms) can vary
 significantly, Allo generalizes the pattern to the
 **register-allocate-distribute** flow.
 
-<img src="/Flow of funds-v02.png" alt="The strategy register allocate distribute logic pattern" />
+<img src={process.env.BASE_PATH + "/Flow of funds-v02.png"} alt="The strategy register allocate distribute logic pattern" />
 
 This flow addresses the following:
 
