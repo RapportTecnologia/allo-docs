@@ -61,6 +61,12 @@ acceptProfileOwnership(bytes32 _profileId);
 
 ```
 
+## Protocol Role: `ALLO_OWNER`
+
+Além dos papéis de perfil, o contrato `Registry.sol` define um papel de protocolo chamado `ALLO_OWNER`. Esse papel controla funções administrativas como `recoverFunds` e pode ser transferido de forma segura através de `transferAlloOwner(address)`.
+
+No fork auditado, o `ALLO_OWNER` deve ser transferido para o timelock de governança (ver [Governança Multisig/Timelock](/security/governance)). O deployer inicial deve renunciar ao papel após a transferência.
+
 ## Member
 
 ### Privileges

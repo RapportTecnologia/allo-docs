@@ -24,6 +24,10 @@
 		"title": "Indexer",
 		"type": "page"
 	},
+	"security": {
+		"title": "Security Review",
+		"type": "page"
+	},
 	"development": {
 		"title": "Development",
 		"type": "page"

@@ -5,7 +5,12 @@ const withNextra = require('nextra')({
 
 /** @type {import('next').NextConfig} */
 const config = {
-
+  output: 'export',
+  distDir: 'dist',
+  basePath: process.env.BASE_PATH || '',
+  images: {
+    unoptimized: true,
+  },
 }
- 
+
 module.exports = withNextra(config)

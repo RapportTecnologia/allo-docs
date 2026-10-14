@@ -25,7 +25,17 @@ fund the pool. The same applies for pools that use any ERC20 token.
 The percentage fee amount can be checked by calling `getFeePercentage()`. At
 time of writing the percentage fee is 2.5%. 
 
+### Fee Strategy
+
+Neste fork, o cálculo da taxa percentual foi desacoplado do contrato `Allo.sol` para uma estratégia implementando `IFeeStrategy`. A implementação padrão, `FlatFeeStrategy`, cobra uma porcentagem fixa sobre o valor financiado. Qualquer estratégia customizada deve respeitar a invariante de que **a taxa nunca pode exceder o valor financiado**; caso contrário, a transação reverte com `INVALID_FEE`.
+
+A estratégia de taxa pode ser atualizada pelo owner do Allo (ou pelo timelock, quando a governança estiver ativa). O endereço informado deve possuir bytecode; EOAs são rejeitados.
+
 ### Fee Governance
 
 Fee amounts are determined through the [Gitcoin DAO governance
 process](https://gov.gitcoin.co/t/gitcoin-dao-governance-process-v3/10358).
+
+No fork auditado, a atualização de parâmetros críticos como taxas só pode ocorrer
+através do regime de [governança multisig/timelock](/security/governance).
+

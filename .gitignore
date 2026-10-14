@@ -5,7 +5,11 @@ yarn-error.log
 .yalc
 yalc.lock
 
+dist
+out
+
 public/*.st
 public/*.toml
 public/.nextra
+public/sitemap*.xml
 .vercel

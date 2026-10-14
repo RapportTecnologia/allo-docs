@@ -1,0 +1,30 @@
+---
+description: Revisões de segurança aplicadas ao fork acadêmico do Allo Protocol
+---
+
+# Revisões de Segurança
+
+Este fork do Allo Protocol foi auditado e endurecido ao longo de quatro linhas de revisão. A documentação a seguir descreve as mudanças arquiteturais, os achados de segurança e o regime de governança on-chain implementado.
+
+## Branches de revisão
+
+| Branch | Foco principal |
+|---|---|
+| `refatoracao-gof-revisao` | Correções de inicialização pós-upgrade, validação de dependências, limite de taxa e scripts de deploy/upgrade. |
+| `refatoracao-gof-revisao-facade` | Redesign do `AlloStarterFacade` para preservar a identidade do usuário (SEC-002). |
+| `refatoracao-gof-revisao-vulnerabilidades-npm` | Eliminação de vulnerabilidades críticas e altas do `npm audit`. |
+| `refatoracao-gof-revisao-multisig-dao` | Governança multisig + timelock de 48h para `Allo`, `Registry` e `ProxyAdmin` (SEC-005 / SEC-009). |
+
+## Melhorias transversais
+
+* **Cálculo de taxas (fees)** desacoplado por meio de `IFeeStrategy`; a taxa nunca pode exceder o valor financiado.
+* **Criação de strategies** delegada a `IStrategyFactory`; endereços sem bytecode são rejeitados.
+* **Upgrade de proxy** executa `initializeGoFPatterns()` atomicamente via `ProxyAdmin.upgradeAndCall`.
+* **Governança on-chain** substitui a administração por EOA única: toda ação crítica passa por M-of-N confirmações e 48h de timelock.
+* **Scripts de deploy/upgrade** validam endereços, bytecode, saldo de gas e layout de storage antes de transmitir.
+
+## Status de produção
+
+> **Atenção:** este é ainda um trabalho acadêmico. Antes de qualquer deploy em mainnet são obrigatórios: cobertura mínima de 90% nos contratos core, execução de Slither/Mythril/Echidna, validação em fork/testnet e auditoria externa independente.
+
+Navegue pelas páginas desta seção para detalhes sobre auditoria, governança, Facade e upgrade.
