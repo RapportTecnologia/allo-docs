@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://rapport.tec.br/allo-docs
+
+# Sitemaps
+Sitemap: https://rapport.tec.br/allo-docs/sitemap.xml
